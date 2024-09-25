@@ -1,12 +1,15 @@
 
-import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 
 public class Admin {
 
-    private HashMap<Integer,Client> users;
-    private List<Product> catalogue;
-    private HashMap<Integer,Seller> vendors;
+    private static Hashtable<Integer,Client> users;
+    private static List<Product> catalogue;
+    private static Hashtable<Integer,Seller> vendors;
+
+
+
     
     
 }
