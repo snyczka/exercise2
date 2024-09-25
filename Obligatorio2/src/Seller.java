@@ -10,6 +10,15 @@ public class Seller {
     private List<Product> offerings;
     
 
+    public Seller(int id, String name, String contact) {
+        this.id = id;
+        this.name = name;
+        this.contact = contact;
+        this.offerings = List.of();
+    }
+
+
+
     public int getId() {
         return this.id;
     }
@@ -52,7 +61,7 @@ public class Seller {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(this.id);
     }
 
     

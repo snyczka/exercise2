@@ -1,4 +1,7 @@
 
+import java.util.Objects;
+
+
 
 public class Product {
 
@@ -8,12 +11,15 @@ public class Product {
     private int stock;
 
 
-    public int getId() {
-        return this.id;
+    public Product(int id, String name, float price, int stock) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getId() {
+        return this.id;
     }
 
     public String getName() {
@@ -38,6 +44,23 @@ public class Product {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Product)) {
+            return false;
+        }
+        Product product = (Product) o;
+        return id == product.id && Objects.equals(name, product.name) && price == product.price && stock == product.stock;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.id);
     }
 
     

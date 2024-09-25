@@ -11,7 +11,7 @@ public class Client {
     private int priorityLevel;
 
 
-    public Client(int id, String email, String userName) {
+    public Client(int id, String userName, String email) {
         this.id = id;
         this.userName = userName;
         this.email = email;
@@ -20,7 +20,7 @@ public class Client {
     }
 
 
-    public Client(int id, String email, int priorityLevel) {
+    public Client(int id, String userName, String email, int priorityLevel) {
         this.id = id;
         this.email = email;
         this.shoppingCart = List.of();
@@ -79,7 +79,7 @@ public class Client {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(this.id);
     }
     
 
