@@ -1,6 +1,6 @@
 
 import java.util.List;
-
+import java.util.Objects;
 
 public class Seller {
 
@@ -12,10 +12,6 @@ public class Seller {
 
     public int getId() {
         return this.id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -42,6 +38,22 @@ public class Seller {
         this.offerings = offerings;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Seller)) {
+            return false;
+        }
+        Seller seller = (Seller) o;
+        return id == seller.id && Objects.equals(name, seller.name) && Objects.equals(contact, seller.contact) && Objects.equals(offerings, seller.offerings);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
     
 
