@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.MissingResourceException;
 import java.util.concurrent.ExecutorService;
 import javax.management.openmbean.KeyAlreadyExistsException;
-import obligatorio2.Exceptions.NoVendorExeption;
+import obligatorio2.project_exceptions.NoVendorExeption;
 
 public class Admin {
 
@@ -64,7 +64,7 @@ public class Admin {
             Product success = new Product(id, name, price, stock);
             this.catalogue.put(id, success);
 
-        } catch (KeyAlreadyExistsException badKey, NoVendorExeption) {
+        } catch (KeyAlreadyExistsException badKey, NoVendorExeption badVendor) {
         }
 
     }
